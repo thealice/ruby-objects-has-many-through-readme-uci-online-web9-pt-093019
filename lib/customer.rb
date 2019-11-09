@@ -4,7 +4,6 @@ class Customer
   def initialize(name, age)
     @name = name
     @age = age
-    @@all << self
   end
   def save
     @@all << self
