@@ -17,7 +17,7 @@ class Customer
   end
 
   def waiters
-    meals.select {|meal| meal.waiter}
+    self.meals.collect {|meal| meal.waiter}
   end
 
   def self.all
