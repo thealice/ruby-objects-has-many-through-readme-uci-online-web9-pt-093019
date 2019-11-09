@@ -9,6 +9,10 @@ class Customer
     save
   end
 
+  def self.all
+    @@all
+  end
+
   def save
     @@all << self
   end
@@ -25,8 +29,9 @@ class Customer
     self.meals.collect {|meal| meal.waiter}
   end
 
-  def self.all
-    @@all
+  def new_meal_20_percent(waiter, total)
+    tip = total * 0.2
+    Meal.new(waiter, self, total, tip)
   end
 
 end
