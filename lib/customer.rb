@@ -1,14 +1,18 @@
 class Customer
-  attr_reader :name, :age
+  attr_accessor :name, :age
+
   @@all = []
+
   def initialize(name, age)
     @name = name
     @age = age
     save
   end
+
   def save
     @@all << self
   end
+  
   def new_meal(waiter, total, tip)
     Meal.new(waiter, self, total, tip)
   end
