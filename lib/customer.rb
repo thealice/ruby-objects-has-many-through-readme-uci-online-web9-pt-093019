@@ -18,4 +18,8 @@ class Customer
   def waiters
     meals.all.select {|meal| meal.waiter}
   end
+
+  def self.all
+    @@all
+  end
 end
